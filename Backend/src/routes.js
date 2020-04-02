@@ -1,8 +1,15 @@
 const routes = require('express').Router()
 const multer = require('multer')
 const multerConfig = require('./config/multer')
+const servicePost = require('./services/servicePost')
 
 const Post = require('./models/Post')
+
+routes.get('/', async(req, res) => {
+
+    return res.json({Hello: 'World'})
+})
+
 
 routes.get('/posts', async(req, res) => {
     const posts = await Post.find()
@@ -20,6 +27,8 @@ routes.post('/posts', multer(multerConfig).single('file'), async(req, res) => {
         key,
         url,
     })
+    //servicePost.receivePost()
+    await servicePost.emitPost(post)
     return res.json(post)
 })
 

@@ -14,7 +14,8 @@
     "mongoose": "^5.9.7",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
-    "multer-s3": "^2.9.0"
+    "multer-s3": "^2.9.0",
+    "mongodb": "^3.6.8"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"

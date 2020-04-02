@@ -25,7 +25,7 @@ const storageTypes = {
         contentType: multerS3.AUTO_CONTENT_TYPE,
         acl:'public-read',
         key: (req, file, cb)=>{
-            crypto.randomBytes(16, (err, hash) => {
+            crypto.randomBytes(8, (err, hash) => {
                 if (err) {
                     cb(err)
                 }

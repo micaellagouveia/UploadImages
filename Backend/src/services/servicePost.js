@@ -12,11 +12,11 @@ module.exports = {
 
                 const exchange = 'Posts'
 
-                const name = post.name
+                const key = post.key
 
                 channel.assertExchange(exchange, 'fanout', { durable: true })
-                channel.publish(exchange, " ", Buffer.from(name));
-                console.log(' [x] Sent name: %s', name)
+                channel.publish(exchange, " ", Buffer.from(key));
+                console.log(' [x] Sent key: %s', key)
 
             })
 
@@ -47,7 +47,8 @@ module.exports = {
 
                     channel.consume(q.queue, function (msg) {
                         if (msg.content) {
-                            console.log(' [x] Received: %s', msg.content.toString())
+                            let m = ' [x] Received:' + msg.content.toString()
+                            console.log(m)
                         }
                     }, {
                         noAck: true

@@ -11,7 +11,7 @@ routes.get('/', async (req, res) => {
 
 
 routes.get('/posts', async (req, res) => {
-    servicePost.receivePost()
+  //  servicePost.receivePost()
 
     const posts = await Post.find()
     console.log(posts)
@@ -24,7 +24,7 @@ routes.get('/posts', async (req, res) => {
 
 routes.post('/posts', multer(multerConfig).single('file'), async (req, res) => {
 
-    servicePost.receivePost()
+    //servicePost.receivePost()
 
     const { originalname: name, size, key, location: url = '' } = req.file;
 

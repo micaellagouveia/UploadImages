@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components"
 
-//import "react-circular-progressbar/dist/styles.css";
+import "react-circular-progressbar/dist/styles.css"
 
 export default createGlobalStyle`
   * {
@@ -21,4 +21,4 @@ export default createGlobalStyle`
   html, body, #root {
     height: 100%;
   }
-`;
+`
